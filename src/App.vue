@@ -1,9 +1,14 @@
 <template>
-  <div id="app">
-    <div id="nav">
-    </div>
-    <router-view/>
-  </div>
+<v-app>
+  <!-- Must have the app property -->
+  <v-app-bar app>
+    <v-btn :to="'/newUser'"  color="primary">Create User</v-btn>
+  </v-app-bar>
+  <v-main>
+   <router-view/>
+  </v-main>
+</v-app>
+ 
 </template>
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
@@ -13,9 +18,6 @@ import { Component, Vue } from 'vue-property-decorator';
 
 })
 export default class App extends Vue {
-    private goAbout(){
-      this.$router.push({ name: 'About', params: { name: 'yuriy' } })
-    }
 }
 </script>
 <style lang="scss">
